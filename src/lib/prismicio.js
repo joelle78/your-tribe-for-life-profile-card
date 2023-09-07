@@ -1,0 +1,66 @@
+import * as prismic from '@prismicio/client';
+import config from '../../slicemachine.config.json';
+import { createClient } from "@prismicio/client";
+
+const queryHomepage = () => {
+	const client = createClient()
+	return client.getSingle('homepage')
+}
+
+
+
+/**
+ * The project's Prismic repository name.
+ */
+export const repositoryName = config.repositoryName;
+
+/**
+ * A list of Route Resolver objects that define how a document's `url` field is resolved.
+ *
+ * {@link https://prismic.io/docs/route-resolver#route-resolver}
+ *
+ * @type {prismic.ClientConfig["routes"]}
+ */
+// TODO: Update the routes array to match your project's route structure.
+const routes = [
+	{
+		type: 'homepage',
+		path: '/'
+	},
+
+];
+
+/**
+ * Creates a Prismic client for the project's repository. The client is used to
+ * query content from the Prismic API.
+ *
+ * @param {prismic.ClientConfig} config - Configuration for the Prismic client.
+ */
+export const createClient = (config = {}) => {
+	const client = prismic.createClient(repositoryName, {
+		routes,
+		...config
+	});
+
+	return client;
+};
+
+export async function generateMetaData(){
+	const page = await queryHomepage()
+
+	return{
+
+	}
+}
+
+export async function Home() {
+	const page = await queryHomepage()
+    console.log(page.data);
+	return (
+		<main>
+
+		</main>
+	)
+}
+
+

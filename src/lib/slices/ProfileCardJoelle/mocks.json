@@ -1,0 +1,20 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"tecxh": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Nisi cupidatat esse tempor consequat nostrud magna est. Exercitation cupidatat esse cupidatat."
+						}
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]
