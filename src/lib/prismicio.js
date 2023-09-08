@@ -55,7 +55,7 @@ export async function generateMetaData(){
 
 export async function Home() {
 	const page = await queryHomepage()
-    console.log(page.data);
+    console.log(page.data.slices);
 	return (
 		<main>
 
